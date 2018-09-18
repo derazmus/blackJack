@@ -1,12 +1,20 @@
 //Blackjack 
 //by Denise Erazmus
 
-let card1 = "Ace of Spades",
-    card2 = "Ten of hearts";
 
+//card array
+let deck = [
+	"Ace of Spades",
+	"Two of Spades",
+	"Three of Spades"
+];
+
+//array that holds player cards
+
+let playerCards = [ deck[0], deck[2] ];
 
 console.log("Welcome to Blackjack");
 
 console.log("You are dealt: ");
-console.log("  " + card1);
-console.log("  " + card2);
+console.log("  " + playerCards[0]);
+console.log("  " + playerCards[1]);
