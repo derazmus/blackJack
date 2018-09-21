@@ -8,23 +8,39 @@ let suits = ['Hearts', 'Clubs', 'Diamonds', 'Spades'];
 let values = ['Ace', 'King', 'Queen', 'Jack', 'Ten', 'Nine', 'Eight',
     'Seven', 'Six', 'Five', 'Four', 'Three', 'Two'
 ];
-let deck = [];
 
-//loops to create deck of 52 cards
-for (let suitIdx = 0; suitIdx < suits.length; suitIdx++) {
 
-    for (let valueIdx = 0; valueIdx < values.length; valueIdx++) {
-        deck.push(values[valueIdx] + '  of  ' + suits[suitIdx]);
+//create deck
+function createDeck() {
+    //empties deck
+    let deck = [];
+    //loops to create deck of 52 cards
+    for (let suitIdx = 0; suitIdx < suits.length; suitIdx++) {
+
+        for (let valueIdx = 0; valueIdx < values.length; valueIdx++) {
+            deck.push(values[valueIdx] + '  of  ' + suits[suitIdx]);
+        }
     }
+
+    for (let i = 0; i < deck.length; i++) {
+        console.log(deck[i]);
+    }
+    return deck;
 }
 
-for(let i = 0; i < deck.length; i++){
-	console.log(deck[i]);
+//vget next card
+function getNextCard() {
+    //takes the first value off of deck array and shifts all the rest down
+    return deck.shift();
 }
+
+let deck = createDeck();
+
+
 
 //array that holds player cards
 
-let playerCards = [deck[0], deck[2]];
+let playerCards = [getNextCard(), getNextCard()];
 
 console.log("Welcome to Blackjack");
 
