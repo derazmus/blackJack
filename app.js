@@ -18,7 +18,11 @@ function createDeck() {
     for (let suitIdx = 0; suitIdx < suits.length; suitIdx++) {
 
         for (let valueIdx = 0; valueIdx < values.length; valueIdx++) {
-            deck.push(values[valueIdx] + '  of  ' + suits[suitIdx]);
+        	let card = {
+        		suit: suits[suitIdx],
+        		value: values[valueIdx]
+        	};
+            deck.push( card );
         }
     }
 
@@ -28,7 +32,11 @@ function createDeck() {
     return deck;
 }
 
-//vget next card
+function GetCardStr( card ) {
+	return card.value + ' of ' + card.suit;
+}
+
+//get next card
 function getNextCard() {
     //takes the first value off of deck array and shifts all the rest down
     return deck.shift();
@@ -45,5 +53,5 @@ let playerCards = [getNextCard(), getNextCard()];
 console.log("Welcome to Blackjack");
 
 console.log("You are dealt: ");
-console.log("  " + playerCards[0]);
-console.log("  " + playerCards[1]);
+console.log("  " + GetCardStr(playerCards[0]));
+console.log("  " + GetCardStr(playerCards[1]));
